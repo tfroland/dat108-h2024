@@ -1,5 +1,6 @@
 package no.hvl.dat108.f02sortering;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Utvalgssortering {
@@ -20,7 +21,7 @@ public class Utvalgssortering {
 //		};
 		
 		// Eller med lambda-uttrykk, slik:
-		Sammenligner<T> naturlig = (a, b) -> a.compareTo(b);
+		Comparator<T> naturlig = (a, b) -> a.compareTo(b);
 
 		// Eller med metodereferanse (som dere skal lære om senere), slik: 
 //		Sammenligner<T> naturlig = T::compareTo;
@@ -35,7 +36,7 @@ public class Utvalgssortering {
 	 * Kan da sortere på ulike måter bestemt av logikken i Sammenligner-objektet,
 	 * og får en mye mer fleksibel og anvendelig sorteringsmetede.
 	 */
-	public static <T> void sorter(List<T> liste, Sammenligner<T> sammenligner) {
+	public static <T> void sorter(List<T> liste, Comparator<T> comparator) {
 		
 		int n = liste.size(); // antall elementer i listen
 		
@@ -47,7 +48,7 @@ public class Utvalgssortering {
 				T aktuell = liste.get(j);
 				
 /* Før:			if (aktuell.compareTo(min) < 0) {			*/
-/* Nå: */		if (sammenligner.sammenlign(aktuell, min) < 0) {
+/* Nå: */		if (comparator.compare(aktuell, min) < 0) {
 					min = aktuell;
 					minIndeks = j;
 				}

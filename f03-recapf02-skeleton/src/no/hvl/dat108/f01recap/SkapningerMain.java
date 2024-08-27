@@ -40,7 +40,7 @@ public class SkapningerMain {
 		};
 		
 		//Kan vi definere en skapning ved å bruke et lambda-uttrykk? 
-		Skapning bergenser = null;
+		Skapning bergenser = () -> System.out.println("Hallaien!");;
 		
 		Skapning[] tabell = {hund, fugl, katt, bergenser};
 		

@@ -53,8 +53,9 @@ public class FlaterMain {
 		Flate sirkel = new Sirkel(4);
 		System.out.println(sirkel.areal());
 		
+		
 		// Kan vi definere en flate som et lambda-uttrykk?
-		Flate ukjent = null; 
+		Flate ukjent = () -> 15.0; 
 		System.out.println(ukjent.areal());
 	}
 }

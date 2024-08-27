@@ -57,14 +57,16 @@ public class TallfunksjonerMain {
 		
 		//Kan vi definere og bruke en heltallsfunksjon "on the fly" via 
 		//et lambda-uttrykk? F.eks. for å gjøre minus 1.
-		//oppdaterVerdier(tabell, ???);
+		oppdaterVerdier(tabell, a -> a-1);
 		System.out.println("Minus en: " + Arrays.toString(tabell));
+		
+		int[] tabell2 = {1,2,3,4,5};
 		
 		//Kan vi legge det inn i en variabel først, og heller bruke 
 		//variabelen som parameter? F.eks for å dele på 2.
-		//???
-		//oppdaterVerdier(tabell, ???);
-		System.out.println("Halvere:  " + Arrays.toString(tabell));
+		Heltallsfunksjon halvere = a -> a/2;
+		oppdaterVerdier(tabell2, halvere);
+		System.out.println("Halvere:  " + Arrays.toString(tabell2));
 
 	}
 	

@@ -1,6 +1,7 @@
 package no.hvl.dat108.f02sortering;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -41,14 +42,14 @@ public class Main {
 		//			}
 		//		};
 		//Eller som vi så senere, som et lambda-uttrykk, slik:
-		Sammenligner<Person> fnsmnlgn = (a,b) -> a.fornavn().compareTo(b.fornavn());
+		Comparator<Person> fnsmnlgn = (a,b) -> a.fornavn().compareTo(b.fornavn());
 		
 		Utvalgssortering.sorter(listeAvPersoner, fnsmnlgn);
 		System.out.println("Sortert på fornavn:   " + listeAvPersoner);
 		
 		//5. Ønsker å sortere på fødselsår. Hva gjør vi?
 		//   Jo, tilsvarende til forrige:
-		Sammenligner<Person> aarsmnlgn = (a,b) -> a.fodselsaar() - b.fodselsaar();
+		Comparator<Person> aarsmnlgn = (a,b) -> a.fodselsaar() - b.fodselsaar();
 		
 		Utvalgssortering.sorter(listeAvPersoner, aarsmnlgn);
 		System.out.println("Sortert på fødselsår: " + listeAvPersoner);
