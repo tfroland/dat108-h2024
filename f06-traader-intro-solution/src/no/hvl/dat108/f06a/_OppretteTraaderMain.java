@@ -17,25 +17,44 @@ public class _OppretteTraaderMain {
 		 */
 
 		// #1
-		// Thread t1 = 
+		Thread t1 = new MinTraad();
 
 		// #2
-		// Thread t2 = 
+		Thread t2 = new Thread() {
+			@Override
+			public void run() {
+				System.out.println("Hallo fra anonym Thread");
+				for(int i = 0; i < 5; i++) {
+					System.out.println("Thread: " + i);
+				}
+			}
+		};
 
 		// #3
-		// Thread t3 = 
+		Thread t3 = new Thread(new MinRunnable());
 
 		// #4
-		// Thread t4 = 
+		Thread t4 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				System.out.println("Hallo fra anonym Runnable");
+				for(int i = 0; i < 5; i++) {
+					System.out.println("Runnable: " + i);
+				}
+			}
+			
+		});
 
 		// #5
-		// Thread t5 = 
+		Thread t5 = new Thread(() -> System.out.println("Hallo fra lambda-Runnable"));
 
-//		t1.start();
-//		t2.start();
-//		t3.start();
-//		t4.start();
-//		t5.start();
+
+		t1.start();
+		t2.start();
+		t3.start();
+		t4.start();
+		t5.start();
 
 		// Main-tråden vil også si hallo
 		System.out.println("Hallo fra main");

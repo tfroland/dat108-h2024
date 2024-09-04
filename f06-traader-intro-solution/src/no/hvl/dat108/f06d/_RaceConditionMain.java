@@ -15,7 +15,20 @@ public class _RaceConditionMain {
 		 * få en mer "kontrollert" utførelse.
 		 */
 		
-		//...
+		final int N = 100000;
+		
+		Teller teller = new Teller();
+		
+		Thread telleOppTraad = new TelleOppTraad(teller, N);
+		Thread telleNedTraad = new TelleNedTraad(teller, N);
+		
+		telleOppTraad.start();
+		telleNedTraad.start();
+		
+		telleOppTraad.join();
+		telleNedTraad.join();
+		
+		System.out.println("Ferdig! Tellerverdi = " + teller.getVerdi());
 	}
 
 }

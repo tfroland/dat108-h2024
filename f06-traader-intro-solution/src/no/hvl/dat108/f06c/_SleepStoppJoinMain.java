@@ -12,7 +12,16 @@ public class _SleepStoppJoinMain {
 		 * - Hvordan avslutte program selv om ikke alle tråder er ferdige
 		 */
 
-		//...
+		TraadSomKanStoppes t = new TraadSomKanStoppes("hei-tråd");
+		
+		t.setDaemon(true);
+		t.start();
+		
+		Thread.sleep(2000);
+		
+		//t.stopp();
+		
+		//t.join();
 		
 		System.out.println(Thread.currentThread().getName() + " avsluttes");
 	}
