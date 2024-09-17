@@ -30,8 +30,8 @@ public class Main {
 				try {
 					for (int i=1; i<=10; i++) {
 //						bq.add("" + i + ". mann i køen."); // Samme som i Queue
-//						bq.offer("" + i + ". mann i køen.");
-						bq.put("" + i + ". mann i køen.");
+						bq.offer("" + i + ". mann i køen.");
+//						bq.put("" + i + ". mann i køen.");
 					}
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
@@ -45,8 +45,8 @@ public class Main {
 				try {
 					for (int i=1; i<=10; i++) {
 //						System.out.println(bq.remove()); // Samme som i Queue
-//						System.out.println(bq.poll());   // Samme som i Queue
-						System.out.println(bq.take());
+						System.out.println(bq.poll());   // Samme som i Queue
+//						System.out.println(bq.take());
 					}
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
