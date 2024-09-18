@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta name="Author" content="Bjarte Kileng" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/nyttvindu.js"></script>
+    <link href="../fag.css" rel="stylesheet" type="text/css" />
+    <link href="../dat108.css" rel="stylesheet" type="text/css" />
+    <title>Demo av window: Nytt vindu</title>
+    <style>
+      .newwindow_emph {
+          background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Demo av window: Nytt vindu</h1>
+
+    <p>Observer at dette eksempelet ikke vil fungere hvis nettleser er konfigurert til å åpne nye vinduer som fane
+      i samme vindu. I Firefox, velg <em>Rediger/Innstillinger</em> og velg bort <em>Åpne nye vinduer i en fane isteden</em>.</p>
+
+    <p class="liste">Noen lenker:</p>
+    <ul>
+      <li><a href="https://www.hvl.no" target="nyttVindu">HVL</a></li>
+      <li><a href="vindu.html" target="nyttVindu">opprinnelig vindu</a></li>
+    </ul>
+
+    <div id="root">
+      <p><button type="button" data-action="newwindow">Nytt vindu</button></p>
+      <p><button type="button" data-action="chbg">Endre bakgrunnsfarge</button></p>
+      <!--<p><button type="button" data-action="resizebg">Endre størrelse</button></p>
+      <p><button type="button" data-action="move">Flytt</button></p>-->
+    </div>
+
+    <p>Lenkene over er lagt inn ved følgende kode:</p>
+<pre class="demo">&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.hvl.no" target="nyttVindu"&gt;HVL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="vindu.html" target="nyttVindu"&gt;opprinnelig vindu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+    <p>Knappene er lagt inn ved følgende kode:
+<pre class="demo">&lt;div id="root"&gt;
+  &lt;p&gt;&lt;button type="button" data-action="newwindow"&gt;Nytt vindu&lt;/button&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;button type="button" data-action="chbg"&gt;Endre bakgrunnsfarge&lt;/button&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+    </p>
+
+    <p>Dette dokumentet inneholder koden nedenfor i head-delen:</p>
+    <pre class="demo">&lt;script defer src="nyttvindu.js"&gt;&lt;/script&gt;</pre>
+  </body>
+</html>

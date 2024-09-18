@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta name="Author" content="Bjarte Kileng" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/tabell.js"></script>
+    <link href="../fag.css" rel="stylesheet" type="text/css" />
+    <link href="../dat108.css" rel="stylesheet" type="text/css" />
+
+    <title>Demo av DOM: Opprette elementer</title>
+    <style>
+      #root > div[data-input] {
+          display: grid;
+          grid-template-columns: repeat(2, max-content);
+          grid-gap:10px;
+      }
+
+      #root > div[data-input] > label {
+          text-align: right;
+      }
+
+      #root > div[data-input] > label:after {
+          content: ":";
+      }
+
+      #root > div[data-input] button[data-addmember] {
+          grid-column: 1/span 2;     
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Demo av DOM: Opprette elementer</h1>
+
+
+    <p>Denne demonstrasjonen viser bruk av DOM sine metoder for å opprette nye elementer.</p>
+
+    <div id="root">
+      <div data-input>
+        <label for="fname">Fornavn</label><input type="text" id="fname" name="fname" pattern="\s*\p{Lu}\p{Ll}+(\s+\p{Lu}\p{Ll}+)*\s*" placeholder="Dine fornavn"/>
+        <label for="lname">Etternavn</label><input type="text" id="lname" name="lname" pattern="\s*\p{Lu}\p{Ll}+\s*" placeholder="Ditt etternavn"/>
+        <button type="button" data-addmember>Legg til</button>
+      </div>
+
+      <div data-memberlist></div>
+    </div>
+
+    <p>Legg-til knappen over er lagt inn ved følgende kode:</p>
+    <pre class="demo">&lt;button type="button" data-addmember&gt;Legg til&lt;/button&gt;</pre>
+
+    <p>Dette dokumentet inneholder koden nedenfor i head-delen:</p>
+    <pre class="demo">&lt;script defer src="tabell.js"&gt;&lt;/script&gt;</pre>
+
+  </body>
+</html>

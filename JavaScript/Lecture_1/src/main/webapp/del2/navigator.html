@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+<script defer src="js/navigator.js"></script>
+
+<link href="../fag.css" rel="stylesheet" type="text/css" />
+<link href="../dat108.css" rel="stylesheet" type="text/css" />
+
+<title>Objektet navigator</title>
+<style>
+  tbody {
+     border-width: 2px 0;
+     border-style: solid;
+     border-color: black;
+  }
+
+  td:first-child {
+    white-space: nowrap;
+  }
+
+  .mismatch { color: red}
+</style>
+</head>
+
+<body>
+
+<h1>Objektet <var>navigator</var></h1>
+
+<p>Nettlesere kan tillat at bruker spesifisere verdien
+som returnerer egenskapene til <var>navigator</var>.
+Instruksjoner for Firefox kan finnes <a href="https://support.mozilla.org/kb/how-reset-default-user-agent-firefox">her</a>.</p>
+
+<div>
+  <h2>Egenskap <var>navigator.appCodeName</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.appCodeName</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="appCodeName"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.appMinorVersion</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.appMinorVersion</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="appMinorVersion"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.appName</var></h2>
+    <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.appName</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="appName"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.appVersion</var></h2>
+    <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.appVersion</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="appVersion"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.battery</var></h2>
+  <table>
+  <caption>navigator.battery</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="battery"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.browserLanguage</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.browserLanguage</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="browserLanguage"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.buildID</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.buildID</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="buildID"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.connection</var></h2>
+  <table>
+  <caption>navigator.connection</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="connection"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.cookieEnabled</var></h2>
+  <p>Angir om bruk av informasjonskapsler er påslått i nettleser.</p>
+  <table>
+  <caption>navigator.cookieEnabled</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="cookieEnabled"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.cpuClass</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.cpuClass</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="cpuClass"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.credentials</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.credentials</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="credentials"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.deviceMemory</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.deviceMemory</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="deviceMemory"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.doNotTrack</var></h2>
+    <p>Denne egenskapen er ikke i standarden, og nå også merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.doNotTrack</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="doNotTrack"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.geolocation</var></h2>
+  <table>
+  <caption>navigator.geolocation</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="geolocation"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.hardwareConcurrency</var></h2>
+  <table>
+  <caption>navigator.hardwareConcurrency</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="hardwareConcurrency"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.javaEnabled</var></h2>
+      <p>Nå merket som <span class="deprecated">deprecated</span>.</p>  
+  <table>
+  <caption>navigator.javaEnabled()</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="javaEnabled"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.keyboard</var></h2>
+  <table>
+  <caption>navigator.keyboard</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="keyboard"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.language</var></h2>
+  <table>
+  <caption>navigator.language</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="language"></td></tr>
+  </table>
+</div>
+
+<div>
+ <h2>Egenskap <var>navigator.languages</var></h2>
+  <table>
+  <caption>navigator.languages</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="languages"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.locks</var></h2>
+  <table>
+  <caption>navigator.locks</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="locks"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.mediaCapabilities</var></h2>
+  <table>
+  <caption>navigator.mediaCapabilities</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="mediaCapabilities"></td></tr>
+  </table>
+</div>
+<div>
+  <h2>Egenskap <var>navigator.mediaDevices</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.mediaDevices</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="mediaDevices"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.mimeTypes</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.mimeTypes</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="mimeTypes"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.onLine</var></h2>
+  <table>
+  <caption>navigator.onLine</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="onLine"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.oscpu</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.oscpu</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="oscpu"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.pdfViewerEnabled</var></h2>
+  <table>
+  <caption>navigator.productSub</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="pdfViewerEnabled"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.permissions</var></h2>
+  <table>
+  <caption>navigator.permissions</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="permissions"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.platform</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.platform</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="platform"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.plugins</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.plugins</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="plugins"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.presentation</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.presentation</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="presentation"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.product</var></h2>
+  <p>Nå merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.product</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="product"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.productSub</var></h2>
+  <p>Denne egenskapen er ikke i standarden, og nå også merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.productSub</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="productSub"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.serviceWorker</var></h2>
+  <table>
+  <caption>navigator.serviceWorker</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="serviceWorker"></td></tr>
+  </table>
+</div>
+
+<div id="navstorage">
+  <h2>Egenskap <var>navigator.storage</var></h2>
+<p>Egenskapen har verdi kun hvis HTTPS. Med HTTP skal egenskapen ikke være definert.</p>
+  <table>
+  <caption>navigator.storage</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="storage"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.storageQuota</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.storageQuota</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="storageQuota"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.systemLanguage</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.systemLanguage</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="systemLanguage"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.userActivation</var></h2>
+
+  <table>
+  <caption>navigator.userActivation</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="userActivation"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.userAgent</var></h2>
+
+  <!--<p>Andre kobinasjoner av nettlesere og OS finnes på nettet, se f.eks. 
+  <a href="https://www.javascriptkit.com/jsref/navigator.shtml">JavaScript Kit- Navigator Object</a>.</p>-->
+
+  <table>
+  <caption>navigator.userAgent</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="userAgent"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.userAgentData</var></h2>
+  <table>
+  <caption>navigator.userAgentData</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="userAgentData"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.vendor</var></h2>
+  <p>Denne egenskapen er ikke i standarden, og nå også merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.vendor</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="vendor"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.vendorSub</var></h2>
+    <p>Denne egenskapen er ikke i standarden, og nå også merket som <span class="deprecated">deprecated</span>.</p>
+  <table>
+  <caption>navigator.vendorSub</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="vendorSub"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.webdriver</var></h2>
+  <table>
+  <caption>navigator.webdriver</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="webdriver"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.webkitPointer</var></h2>
+  <p>Denne egenskapen er ikke i standarden.</p>
+  <table>
+  <caption>navigator.webkitPointer</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="webkitPointer"></td></tr>
+  </table>
+</div>
+
+<div>
+  <h2>Egenskap <var>navigator.xr</var></h2>
+  <table>
+  <caption>navigator.xr</caption>
+  <tr><th>Platform</th><th>Value</th></tr>
+  <tr><td>Din nettleser</td><td id="xr"></td></tr>
+  </table>
+</div>
+</body>
+</html>

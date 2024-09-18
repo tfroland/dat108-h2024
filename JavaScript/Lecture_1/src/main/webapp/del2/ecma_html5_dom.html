@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta name="Author" content="Bjarte Kileng" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="data:," />
+
+<link href="../fag.css" rel="stylesheet" type="text/css" />
+<link href="../dat108.css" rel="stylesheet" type="text/css" />
+<title>ECMA, HTML5 og DOM</title>
+</head>
+
+<body>
+
+    <h1>ECMA, HTML5 og DOM</h1>
+    <p>JavaScript er omfattet av flere standarder. Dette dokumentet
+        vil forsøke å gi en oversikt over de ulike elementene i
+        JavaScript.</p>
+
+    <p>
+        Oppdelingen avhenger av hvilken nettleser som er utgangspunkt. I
+        f.eks. Internet Explorer før versjon 9 er <em>event</em> et
+        objekt under <em>window</em> objektet, men i standardene hører <em>event</em>
+        inn under objektet <em>document</em>.
+    </p>
+
+    <h2>Nettlesere og standarder</h2>
+
+    <p>
+        JavaScript er en Netscape oppfinnelse, men standardiseringen
+        blir i dag håndtert av organisasjonene <a
+            href="https://www.ecma-international.org/">ECMA</a>, <a
+            href="https://www.w3.org/">W<sup>3</sup>C
+        </a> og <a href="https://www.whatwg.org/">WHATWG</a>. Før
+        HTML&nbsp;5 måtte webutviklere forholde seg til en mengde
+        standarder som nå er dekket av HTML&nbsp;5. WHATWG er ansvarlig
+        for HTML&nbsp;5 med sin <a
+            href="https://html.spec.whatwg.org/multipage/">HTML
+            Living Standard</a>.
+    </p>
+
+    <p>
+        Alle nettleserleverandører anerkjenner webstandardene fra ECMA,
+        W<sup>3</sup>C and WHATWG, og moderne nettlesere følger
+        standardene bra.
+    </p>
+
+    <p>I dette faget will vi forholde oss til de gjeldende
+        standardene, men hvis støtte for eldre nettlesere er nødvendig
+        må koden bli tilpasset. En grovinndeling av nettlesere kan
+        gjøres ved at tjener leverer ulik kode til ulike nettlesere.
+        Dette er nødvendig hvis kode for en nettleser forårsaker at
+        koden ikke kan tolkes av en annen nettleser.</p>
+
+    <p class="liste">Vanligvis vil vi la alle nettlesere få samme
+        kode og la nettleser utføre tilpasset kode, f.eks.:</p>
+    <pre class="demo">if (nettleser forstår kode) {utfør kode}</pre>
+
+    <p class="liste">For å teset om nettleser kan forstå koden kan
+        vi sjekke på eksistens av metoder og egenskaper:</p>
+    <pre class="demo">if (typeof document.addEventListener == 'function') {
+    // Firefox&ge;4, Chrome&ge;7, Safari&ge;5.14, Opera&ge;11.60, IE&ge;9, Edge
+    window.addEventListener('load',main.init.bind(main),false);
+} else {
+    // Eldre nettleser
+    window.onload=function(e) {main.init(e)};
+}</pre>
+
+    <p class="liste">Det finnes elementer i nåværende standard som
+        ikke er like godt støttet av alle nettleser. Dokumentasjonen til
+        nettleser kan hjelpe oss med å avgjøre om en JavaScript
+        konstruksjon er støttet.</p>
+    <nav>
+        <ul>
+            <li><a href="https://www.opera.com/docs/specs/">Opera</a>
+            <li><a href="https://developer.mozilla.org/">Firefox</a></li>
+            <li><a href="https://msdn.microsoft.com/library">Microsoft Edge</a></li>
+            <li><a
+                href="https://developer.apple.com/safari/resources/">Safari</a></li>
+            <li><a href="https://developer.chrome.com/home">Chrome</a></li>
+        </ul>
+    </nav>
+
+    <p>Dokumentasjonen for JavaScript i Firefox er meget nyttig da
+        den inkluderer en kompatibilitetestabell for alle moderne
+        nettlesere, både PC og mobiltelefon versjoner.</p>
+
+    <p class="liste">De fleste nyere GUI nettlesere kan deles i
+        følgende grupper:</p>
+    <ul>
+        <!-- <li>IE.</li> -->
+        <li>Gecko (Mozilla):
+            <ul>
+                <li>Firefox,</li>
+                <li>IceCat,</li>
+                <li>Waterfox,</li>
+                <li>K-Meleon.</li>
+            </ul>
+        </li>
+        <li>WebKit (Apple):
+            <ul>
+                <li>WebKit komponenter:
+                    <ul>
+                        <li>JavaScriptCore: JavaScript engine.</li>
+                        <li>WebCore: Layout, rendering and DOM
+                            library.</li>
+                        <li>Både JavaScriptCore og WebCore var
+                            basert på Konqueror fra KDE.</li>
+                    </ul>
+                </li>
+                <li>Nettlesere som bruker WebKit:
+                    <ul>
+                        <li>Safari.</li>
+                        <li>alle iOS nettlesere.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Blink (Google):
+            <ul>
+                <li>Blink er basert på WebKit fra Apple, som igjen er basert på Konqueror fra KDE.</li>
+                <li>JavaScript-motoren har fått navn V8.</li>
+                <li>Nettlesere som bruker Blink:
+                    <ul>
+                        <li>Chromium,</li>
+                        <li>Chrome,</li>
+                        <li>Opera,</li>
+                        <li>Edge,</li>
+                        <li>Midori.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        Se også <a
+            href="https://en.wikipedia.org/wiki/Comparison_of_browser_engines">Comparison
+            of browser engines</a>
+    </p>
+    <p>
+        I dette dokumentet benyttes betegnelsen <q>moderne nettleser</q>
+        for moderne GUI nettlesere. Konsollbaserte nettlesere, f.eks. <a
+            href="https://lynx.invisible-island.net/">Lynx</a>, <a
+            href="https://edbrowse.org/">Edbrowse</a> og <a
+            href="https://www.emacswiki.org/emacs/w3">Emacs/W3</a> er
+        ikke inkludert.
+    </p>
+
+    <h2>ECMA</h2>
+
+    <p class="liste">
+        The <a href="https://262.ecma-international.org/">ECMA 262</a> standarden (ECMA=<em>European Computer
+            Manufacturer's Association</em>) omfatter den grunnleggende
+        strukturen i JavaScript:
+    </p>
+    <ul>
+        <li>deklarasjoner av variabler og objekter,</li>
+        <li>kontrollstrukturer,</li>
+        <li>løkker,</li>
+        <li>funksjonsdeklarasjoner,</li>
+        <li>klasse definisjoner.</li>
+    </ul>
+
+
+    <h2>
+        <var>Window</var>
+        grensesnittet
+    </h2>
+
+    <p>
+        Objektet <em>window</em> er en forekomst av
+        <var>Window</var>
+        klassen og representerer nettleservinduet som viser websiden.
+        Alle globale variabler, objekter og funksjoner vil være
+        egenskaper til
+        <var>window</var>
+        .
+    </p>
+
+    <div>
+        <p class="liste">
+            Nyere nettleser tillater, men krever ikke at vi angir <em>window</em>
+            når JavaScript koden tilhører
+            <var>window</var>
+            . JavaScript kode-snuttene
+        </p>
+    </div>
+    <pre class="demo">alert("Velkommen til kurset");</pre>
+    <div>og</div>
+    <pre class="demo">
+window.alert("Velkommen til kurset");
+</pre>
+    <div>
+        <p>
+            vil begge kjøre
+            <var>alert</var>
+            funksjonen. En global variabel
+            <var>some_var</var>
+            kan aksesseres også som
+            <var>window.some_var</var>
+            .
+        </p>
+    </div>
+
+    <p class="liste">
+        Metoder og egenskaper til <em>window</em> gjør at vi kan:
+    </p>
+    <ul>
+        <li>Opprette nye nettleservinduer,</li>
+        <li>operere på et nettleservindu fra et annet,</li>
+        <li>scrolle vindu,</li>
+        <li>undersøke utseende, størrelse og plassering av
+            nettleservindu på skjerm,</li>
+        <li>endre utseende, størrelse og plassering av
+            nettleservindu, (IE bruker <em>document.body</em>)
+        </li>
+        <li>kjøre JavaScript-funksjoner med jevne intervall.</li>
+    </ul>
+
+    <p>
+        Implementasjonen av <em>window</em> har vært nokså forskjellig,
+        men moderne nettlesere implementerer
+        <var>window</var>
+        objektet fra HTML Living Standard.
+    </p>
+
+    <nav>
+        <p class="liste">
+            Dokumentasjon av <em>Window</em> grensesnittet:
+        </p>
+        <ul>
+            <li><a
+                href="https://html.spec.whatwg.org/multipage/window-object.html#the-window-object">HTML
+                    Living Standard</a></li>
+            <!--  <li><a href="https://www.w3.org/TR/html5/browsers.html#the-window-object">HTML&nbsp;5</a></li> -->
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Mozilla (Firefox)</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <p class="liste">
+            Demonstrasjon på bruk av
+            <var>window</var>
+            :
+        </p>
+        <ul>
+            <li><a href="farge.html">Demo av window: Timer</a></li>
+            <li><a href="nyttvindu.html">Demo av window: Nytt
+                    vindu</a></li>
+        </ul>
+    </nav>
+
+    <h2>
+        <em>Navigator</em> grensesnittet
+    </h2>
+
+    <p class="liste">
+        Objektet
+        <var>navigator</var>
+        er en forekomst av
+        <var>Navigator</var>
+        klassen og representerer nettleseren. Objeket <em>navigator</em>
+        kan gi oss informasjon om:
+    </p>
+    <ul>
+        <li>nettlesertype (Netscape, Edge, Opera, Safari, Chrome),</li>
+        <li>nettleserversjon,</li>
+        <li>språk som nettleser er oppsatt med (norsk, engelsk
+            etc),</li>
+        <li>operativssystem på datamaskinen.</li>
+    </ul>
+
+    <nav>
+        <p class="liste">
+            Dokumenmtasjon av
+            <var>Navigator</var>
+            grensesnittet:
+        </p>
+        <ul>
+            <li><a
+                href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator">HTML
+                    Living Standard</a></li>
+            <!--  <li><a href="https://www.w3.org/TR/html5/webappapis.html#the-navigator-object">HTML&nbsp;5</a></li> -->
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">Mozilla</a></li>
+        </ul>
+    </nav>
+
+    <h2>
+        <em>History</em> grensesnittet
+    </h2>
+
+    <p>
+        Objektet
+        <var>history</var>
+        er en forekomst av
+        <var>History</var>
+        klassen. Objektet lar oss navigere framover og bakover i
+        nettleseren sin besøkshistorie. Objektet lar oss manipulere
+        innholdet i besøkshistorien, men innholdet er leselig pga.
+        sikkerhetshensyn.
+    </p>
+
+    <nav>
+        <p class="liste">
+            Dokumentasjon av
+            <var>History</var>
+            grensesnittet:
+        </p>
+        <ul>
+            <li><a
+                href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">HTML
+                    Living Standard</a></li>
+            <!--  <li><a href="https://www.w3.org/TR/html5/browsers.html#the-history-interface">HTML&nbsp;5</a></li> -->
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/History">Mozilla</a></li>
+        </ul>
+    </nav>
+
+    <h2>
+        <em>Screen</em> grensesnittet
+    </h2>
+    <p>
+        Objektet
+        <var>screen</var>
+        er en forekomst av
+        <var>Screen</var>
+        klassen. Objektet refererer til dataskjermen og har metoder og
+        egenskaper for å finne skjermoppløsning og fargedybde. Det
+        finnes ingen vedtatt standard for dette objektet, men alle
+        standard nettlesere kjenner objektet. Objektet er med i et
+        utkast til standard, <em>CSSOM View Module draft</em>, <a
+            href="https://drafts.csswg.org/cssom-view/#screen">The
+            Screen interface</a>.
+    </p>
+
+    <nav>
+        <p class="liste">
+            Dokumentasjon av
+            <var>Screen</var>
+            grensesnittet:
+        </p>
+        <ul>
+            <li><a
+                href="https://drafts.csswg.org/cssom-view/#screen">CSSOM
+                    View Module</a></li>
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Screen">Mozilla</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h2>
+        DOM og <em>Document</em> grensesnittet
+    </h2>
+
+    <p>
+        Objektet
+        <var>document</var>
+        er en forekomst av
+        <var>Document</var>
+        klassen. Objektet er inngangen vår til webdokumentet som vises i
+        nettleser.
+    </p>
+
+    <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM
+        (<em>Document Object Model</em>)</a> er strukturen for webdokument i nettleser sin hukommelse.
+        DOM lar oss operere på webdokujmentet med JavaScript.</p>
+        
+        <p>DOM inkluderer objekter,
+        metoder og egenskaper for å representere og arbeide med HTML-,
+        XML- og CSS-dokumenter. Objektet <em>document</em> er toppnoden
+        i DOM-strukturen, trestrukturen som nettleser benytter for å
+        representerer HTML og XML dokumenter.
+    </p>
+
+    <p class="liste">DOM er omfattet av flere standarder:</p>
+    <dl>
+        <dt>DOM&nbsp;0</dt>
+        <dd>Angir hva som var felles i dokument-modellene til
+            Netscape sin Navigator 3.0 og Microsoft Internet Explorer 3.</dd>
+        <dt>DOM&nbsp;1</dt>
+        <dd>
+            <a href="https://www.w3.org/TR/REC-DOM-Level-1/">Level 1
+                Specification</a>.
+        </dd>
+        <dt>DOM&nbsp;2</dt>
+        <dd>
+            <a href="https://www.w3.org/TR/DOM-Level-2-Core/">Core
+                Specification</a>, <a
+                href="https://www.w3.org/TR/DOM-Level-2-HTML/">HTML
+                Specification</a>, <a
+                href="https://www.w3.org/TR/DOM-Level-2-Views">Views
+                Specification</a>, <a
+                href="https://www.w3.org/TR/DOM-Level-2-Events/">Events
+                Specification</a>, <a
+                href="https://www.w3.org/TR/DOM-Level-2-Style/">Style
+                Specification</a> og <a
+                href="https://www.w3.org/TR/DOM-Level-2-Traversal-Range/">Traversal
+                and Range Specification</a>.
+        </dd>
+        <dt>DOM&nbsp;3 og DOM&nbsp;4</dt>
+        <dd>
+            Begge disse standardene er erstattet av <a
+                href="https://dom.spec.whatwg.org/">DOM Living
+                standard</a>
+        </dd>
+        <!--<p><a href="https://www.w3.org/TR/DOM-Level-3-AS/">Abstract Schemas Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-Core/">Core Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-LS/">Load and Save Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-Views/">Level 3 Views and Formatting Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-XPath/">XPath Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-Val/">Validation Specification</a>, <a href="https://www.w3.org/TR/DOM-Level-3-Events/">Events Specification</a>
+og <a href="https://www.w3.org/TR/DOM-Level-3-ASLS/">Abstract Schemas and Load and Save Specification</a>.</p>-->
+    </dl>
+
+    <p>
+        Standarden <a href="https://html.spec.whatwg.org/multipage/">HTML
+            Living Standard</a> er basert på <a
+            href="https://www.w3.org/TR/html401/">HTML&nbsp;4</a>,
+        XHTML&nbsp;1 (<a href="https://www.w3.org/TR/xhtml1/">XHTML&nbsp;1.0</a>,
+        <a href="https://www.w3.org/TR/xhtml11/">XHTML&nbsp;1.1</a>) og
+        DOM&nbsp;2. Moderne nettlere har god støtte også for <a
+            href="https://dom.spec.whatwg.org/">DOM Living standard</a>
+        som har erstattet DOM&nbsp;3 og DOM&nbsp;4.
+    </p>
+
+    <p class="liste">DOM lar oss:</p>
+    <ul>
+        <li>Lage/endre/slette CSS-stiler og stilark,</li>
+        <li>regne ut benyttede størrelser, (f.eks. hvor stort blir
+            et HTML-element i piksler der dimensjonene er spesifisert i
+            <em>em</em> eller prosenter),
+        </li>
+        <li>legge til/endre/slette attributter til HTML-elementer,</li>
+        <li>lage nye/endre/slette HTML elementer,</li>
+        <li>reagere på hendelser, undersøke hendelser, sende
+            hendelser eller redirigere hendelser.</li>
+    </ul>
+
+    <nav>
+        <p class="liste">Dokumentasjon av DOM:</p>
+        <ul>
+            <li><a href="https://dom.spec.whatwg.org/">DOM
+                    Living Standard</a></li>
+            <!--  <li><a href="https://www.w3.org/DOM/">HTML&nbsp;5</a></li> -->
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API">Mozilla</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <p class="liste">
+            Dokumentasjon av
+            <var>Document</var>
+            grensesnittet:
+        </p>
+        <ul>
+            <li><a
+                href="https://html.spec.whatwg.org/multipage/dom.html#the-document-object">HTML
+                    Living Standard</a></li>
+            <li><a
+                href="https://dom.spec.whatwg.org/#interface-document">DOM
+                    Living Standard</a></li>
+            <!--  <li> <a href="https://www.w3.org/TR/html5/dom.html#elementdef-document">HTML&nbsp;5</a></li> -->
+            <li><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Mozilla</a></li>
+        </ul>
+    </nav>
+
+    <p class="liste">Demonstrasjoner på bruk av DOM:</p>
+    <nav>
+        <ul>
+            <li><a href="tabell.html">Demo av DOM: Opprette
+                    elementer</a></li>
+            <li><a href="fjerne.html">Demo av DOM: Fjerne
+                    elementer</a></li>
+        </ul>
+    </nav>
+
+    <p>Vi vil arbeide mer med DOM i øvingene.</p>
+</body>
+</html>
