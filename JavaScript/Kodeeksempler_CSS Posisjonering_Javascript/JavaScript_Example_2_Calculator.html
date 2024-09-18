@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+  
+            #calculator_box {
+                background-color: orange;
+                border: 2px solid black;
+                position:static;
+                top: 5px;
+                left: 5px;
+                width: 250px;
+                height: 250px; 
+                font-size: large;
+                text-align: center;
+                 
+            }
+        </style>
+
+        <script>
+            function add_numbers(){
+               var sum = Number(document.getElementById('in_1').value) + Number(document.getElementById('in_2').value);
+               document.getElementById('result').value = sum;
+            }
+       
+            function sub_numbers(){
+               var sum = Number(document.getElementById('in_1').value) - Number(document.getElementById('in_2').value);
+               document.getElementById('result').value = sum;
+            }
+       
+            function mult_numbers (){
+               var sum = Number(document.getElementById('in_1').value) * Number(document.getElementById('in_2').value);
+               document.getElementById('result').value = sum;
+            }
+       
+            function div_numbers (){
+               var sum = Number(document.getElementById('in_1').value) / Number(document.getElementById('in_2').value);
+               document.getElementById('result').value = sum;
+            }
+
+            function clear_all (){
+                document.getElementById('in_1').value = null;
+                document.getElementById('in_2').value = null;
+                document.getElementById('result').value = null;  
+            }
+           </script>
+
+    </head>
+   
+    <body>
+        <div id="calculator_box">
+            <h3>En enkel kalkulator !</h3>
+            <table>
+                <tr>
+                    <td>Verdi 1 : </td>
+                    <td><input type="text" id="in_1"></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="add_numbers();">+</button>
+                        <button onclick="sub_numbers();">-</button>
+                        <button onclick="mult_numbers();">*</button>
+                        <button onclick="div_numbers();">/</button>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>Verdi 2 : </td>
+                    <td><input type="text" id="in_2"></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>=</td>
+                    <td><input type="text" id="result"></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><button onclick="clear_all();">Nullstill</button></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>    
+    </body>
+</html>

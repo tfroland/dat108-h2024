@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<meta charset="UTF-8"> 
+		<title>PC sin Javascript Tutorial !</title>
+		<style>
+			#outer_box {
+				background-color: yellow;
+				position:absolute;
+				top: 70px;
+				left: 90px;
+			}
+		</style>
+		<script>
+		
+			alert("Hello World !")
+			console.log("Hello World!")
+			
+			function say_Hello(){
+				document.getElementById("display_element").innerHTML = "HelloWorld"			
+			}
+			
+			function set_blue(){
+				document.getElementById("outer_box").style.backgroundColor = "blue";
+			}
+			
+			function set_red(){
+				document.getElementById("outer_box").style.backgroundColor = "red";
+			}
+			
+			function move_box(){
+				document.getElementById("outer_box").style.top = "200px";
+				document.getElementById("outer_box").style.left = "350px";
+			}
+			
+			function bounching_box(){
+				document.getElementById("outer_box").style.top = Math.random() * 1000 + "px";
+				document.getElementById("outer_box").style.left = Math.random() * 1000 + "px";
+			}
+
+		</script>
+	</head>
+	
+	<body>
+		<button onclick="say_Hello()">Say Hello !</button>
+		
+		<div id="outer_box">
+			<button onclick="set_blue()">Set Blue ! </button>
+			<button onclick="set_red()">Set Red ! </button>
+			<p id="display_element"> ?? </p>		
+		</div>
+		
+		<button onclick="move_box()">Move Box !</button>
+		
+		<button onclick="setInterval(bounching_box,1000)">Bounche Mode !</button> -->
+
+	</body>	
+</html>

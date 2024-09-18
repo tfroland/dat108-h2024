@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #red_box {
+                background-color :red;
+                border: 2px solid black;
+                position:relative;
+                top: 5px;
+                left: 5px;
+                width: 450x;
+                height: 1450px;
+                font-size: large;
+                text-align: center; 
+                
+            }
+    
+            #orange_box {
+                background-color: orange;
+                border: 2px solid black;
+                position:static;
+                top: 5px;
+                left: 5px;
+                width: 300px;
+                height: 350px; 
+                font-size: large;
+                text-align: center;
+                 
+            }
+    
+            #white_box {
+                background-color:white;
+                border: 2px solid black;
+                position:static;
+                top: 15px;
+                left: 20px;
+                width: 150px;
+                height: 175px; 
+                font-size: large;
+                text-align: center;
+      
+            }
+        </style>
+
+        <script>
+            function move_box(box_id){
+               document.getElementById(box_id).style.position = "absolute";
+               document.getElementById(box_id).style.top = "70px";
+               document.getElementById(box_id).style.left = "90px";
+            }
+       
+            function add_text(box_id,text_to_add){
+               document.getElementById(box_id).innerHTML = text_to_add;    
+            }
+           </script>
+
+    </head>
+   
+    <body>
+        <div id="red_box">
+            <div id="orange_box" onmouseover="add_text('orange_box','Her er den Orange boksen !')">
+            </div>
+            <div id="white_box"">
+                <br>
+                <br>
+                <br>
+                <br>
+                <button onclick="move_box('white_box');"> Flytt Boks !</button>  
+            </div>
+        </div>    
+    </body>
+</html>

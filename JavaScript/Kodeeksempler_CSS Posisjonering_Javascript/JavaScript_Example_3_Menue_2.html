@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #page {
+                background-color:lightgrey;
+                width: 1050px;
+                height: 1050px;                 
+            }
+
+            #header {
+                background-color:green;
+                width: 1050px;
+                height: 50px; 
+                 
+            }
+            #menu {
+                float:left;
+                display: none;    
+                position:relative;
+                top: 16px;
+                background-color:darkgrey;
+                width: 250px;
+                height: 150px; 
+                font-size: large;
+                text-align: center;
+                 
+            }
+            #menuselector {
+                position:relative;
+                top: 10px;
+                left: 10px;        
+            }      
+            div.menuitem {
+                left:10px;
+                width: 250px;
+                height: 30px;
+                color:white;
+                font-size: large;
+                text-align: left;    
+            }
+            a {
+                color:white;
+                text-decoration: none;
+            }
+            #content {
+                position:fixed;
+                top:200px;
+                left:400px;   
+                background-color:red;
+                color:white;
+                width: 250px;
+                height: 150px; 
+                font-size: large;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            function toggle_menu (){
+               var display = document.getElementById('menu').style.display;
+
+               if (display == 'block'){
+                   document.getElementById('menu').style.display = "none";
+                   document.getElementById('menuselector').innerHTML = "<img src='img/hm_closed.png' widht='60' height='30' onclick='toggle_menu ()'>"; 
+               }else{
+                   document.getElementById('menu').style.display = "block";
+                   document.getElementById('menuselector').innerHTML = "<img src='img/hm_open.png' widht='500' height='30' onclick='toggle_menu ()'>"; 
+               }
+            }
+
+            function toggle_menu_item (itemnum,total){
+                var i;
+                for (i=1; i <= total; i++){
+                    if (i == itemnum){
+                        document.getElementById("menuitem_" + i).style.backgroundColor = "green";              
+                    } else {
+                        document.getElementById("menuitem_" + i).style.backgroundColor = "darkgrey";                        
+                    }
+                }
+            }
+           </script>
+    </head>
+   
+    <body>
+        <div id="page">
+            <div id="top">
+                <div id="header">
+                    <div id="menuselector"> <img src='img/hm_closed.png' widht='60' height='30' onclick="toggle_menu ()"></div>
+                    <div id="menu">
+                        <div id="menulist">
+                            <div class="menuitem" id="menuitem_1" onmouseover="toggle_menu_item(1,5)"><a href="JavaScript_Example_3_Menue_1.html">Side 1</a></div>
+                            <div class="menuitem" id="menuitem_2" onmouseover="toggle_menu_item(2,5)"><a href="JavaScript_Example_3_Menue_2.html">Side 2</a></div>
+                            <div class="menuitem" id="menuitem_3" onmouseover="toggle_menu_item(3,5)"><a href="#item3">Side 3</a></div>
+                            <div class="menuitem" id="menuitem_4" onmouseover="toggle_menu_item(4,5)"><a href="#item4">Side 4</a></div>
+                            <div class="menuitem" id="menuitem_5" onmouseover="toggle_menu_item(5,5)"><a href="#item5">Side 5</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <p>
+                    Side 2
+                </p>
+            </div>
+        </div>
+    </body> 
+    </html>
