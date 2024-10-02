@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="boolean_type.js"></script>
+    <link href="../main.css" rel="stylesheet" type="text/css">
+    <title>Datatype boolean og bolske uttrykk</title>
+</head>
+
+<body>
+    <h1>Datatype boolean og bolske uttrykk</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>Uttrykk som returnerer datatype boolean</legend>
+            <button type="button" data-demo="demo0">: true</button>
+            <button type="button" data-demo="demo1">: false</button>
+            <button type="button" data-demo="demo2">: 4>2</button>
+            <button type="button" data-demo="demo3">: "ole" === "per"</button>
+        </fieldset>
+        <fieldset>
+            <legend>Operatorer == og ===</legend>
+            <button type="button" data-demo="demo4">: Streng med == og ===</button>
+            <button type="button" data-demo="demo5">: Tall med == og ===</button>
+            <button type="button" data-demo="demo6">: Bolsk verdi med == og ===</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Operatorer != og !==</legend>
+            <button type="button" data-demo="demo7">: Streng med != og !==</button>
+            <button type="button" data-demo="demo8">: Tall med != og !==</button>
+            <button type="button" data-demo="demo9">: Bolsk verdi med != og !==</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Verdier som gir usann i en bolsk sammenheng</legend>
+            <button type="button" data-demo="demo10">: undefined</button>
+            <button type="button" data-demo="demo11">: null</button>
+            <button type="button" data-demo="demo12">: NaN</button>
+            <button type="button" data-demo="demo13">: Tom tekststreng</button>
+            <button type="button" data-demo="demo14">: Tallet 0</button>
+        </fieldset>
+        <fieldset>
+            <legend>Verdier som gir sann i en bolsk sammenheng</legend>
+            <button type="button" data-demo="demo15">: Infinity</button>
+            <button type="button" data-demo="demo16">: Alle tall ulikt 0</button>
+            <button type="button" data-demo="demo17">: Ikke-tom streng</button>
+            <button type="button" data-demo="demo18">: Streng "0"</button>
+            <button type="button" data-demo="demo19">: Streng "false"</button>
+        </fieldset>
+        <pre data-viewelm></pre>
+    </div>
+</body>
+
+</html>

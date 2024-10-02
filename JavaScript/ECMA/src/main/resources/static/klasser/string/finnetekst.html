@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="finnetekst.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+    <title>Delstrenger, søk i tekst og erstatte tekst</title>
+</head>
+
+<body>
+    <h1>Delstrenger, søk i tekst og erstatte tekst</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <p>Her demonstrers metoder for å plukke ut delsternger, fra indeks og etter søk.
+        Det demonsteres også bruk av regulære uttrykk for søk, og metoder for å erstatte dler av tekst med annen.</p>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>Delstreng med slice</legend>
+            <button type="button" data-demo="demo0"></button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Søk med includes og indexOf</legend>
+            <button type="button" data-demo="demo1">: includes</button>
+            <button type="button" data-demo="demo2">: indexOf</button>
+        </fieldset>
+        <fieldset>
+            <legend>Søk i tekst med regulært uttrykk</legend>
+            <button type="button" data-demo="demo3">: match</button>
+            <button type="button" data-demo="demo4">: matchAll</button>
+            <button type="button" data-demo="demo5">: match med UTF-8 tegnklasse</button>
+            <button type="button" data-demo="demo6"> match med UTF-8 tegnklasse for bokstav</button>
+            <button type="button" data-demo="demo7">: match med se framover og bakover</button>
+        </fieldset>
+        <fieldset>
+            <legend>Erstatte deler av tekst</legend>
+            <button type="button" data-demo="demo8">: replace</button>
+            <button type="button" data-demo="demo9">: replace med regulært uttrykk</button>
+            <button type="button" data-demo="demo10">: replaceAll</button>
+            <button type="button" data-demo="demo11">: replace med egendefinert funksjon</button>
+        </fieldset>
+        <pre data-viewelm></pre>
+    </div>
+</body>
+
+</html>

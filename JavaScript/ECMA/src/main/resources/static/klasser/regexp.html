@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="regexp.js"></script>
+    <link href="../main.css" rel="stylesheet" type="text/css">
+    <title>RegExp</title>
+</head>
+
+<body>
+    <h1>RegExp</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+    <p>
+        Her demonstreres bruken av regulære uttrykk. Sjekk f.eks. <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">Mozilla
+            sin dokumentasjon</a> for detaljer og flere metoder.
+    </p>
+
+
+    <div> <p>Elementet under for input av tekst benyttes av demo3 og demo4.</p>
+        <p><textarea id="story" rows="5" cols="50" placeholder="Skriv en tekst"></textarea></p>
+    </div>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>RegExp metode test</legend>
+            <button type="button" data-demo="demo0"></button>
+            <button type="button" data-demo="demo1"></button>
+            <button type="button" data-demo="demo2"></button>
+        </fieldset>
+        <fieldset>
+            <legend>String og match metode med RegExp</legend>
+            <button type="button" data-demo="demo3">: set av unike ord</button>
+            <button type="button" data-demo="demo4">: map for å telle unkie ord</button>
+        </fieldset>
+        <pre data-viewelm></pre>
+    </div>
+</body>
+
+</html>

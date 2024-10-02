@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="json.js"></script>
+    <link href="../main.css" rel="stylesheet" type="text/css">
+    <title>JSON objektet</title>
+</head>
+
+<body>
+    <h1>JSON objektet</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <p>Objektet <var>JSON</var> inkluderer funksjoner for å konvertere
+        mellom JavaScript objekt og tekst i JSON syntaks.</p>
+
+    <p>JSON objektet er nytt f.eks. når webapplikasjon skal utveksle data mellom nettleser og webtjener.</p>
+
+    <p>JSON står for JavaScript Object Notation.</p>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>JSON</legend>
+            <button type="button" data-demo="demo0">: Tabell til tekst</button>
+            <button type="button" data-demo="demo1">: Tekst til tabell</button>
+            <button type="button" data-demo="demo2">. Object til tekst</button>
+            <button type="button" data-demo="demo3">: Tekst til object</button>
+        </fieldset>
+        <fieldset>
+            <legend>Feil bruk av JSON: Koden vil feile</legend>
+            <button type="button" data-demo="demo4">: Funksjon i JSON tekst</button>
+            <button type="button" data-demo="demo5">: Feile hermetegn</button>
+            <button type="button" data-demo="demo6">: Nøkkelnavn utemn omsluttende hermetegn</button>
+        </fieldset>
+        <pre data-viewelm></pre>
+    </div>
+
+</body>
+
+</html>

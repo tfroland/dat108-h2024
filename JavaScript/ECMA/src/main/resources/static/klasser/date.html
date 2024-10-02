@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="date.js"></script>
+    <link href="../main.css" rel="stylesheet" type="text/css">
+    <title>Date</title>
+</head>
+
+<body>
+    <h1>Date</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+    <p>Her demonstreres <strong>Date</strong> klassen. Sjekk f.eks. <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Mozilla sin
+            dokumentasjon</a> for detaljer og flere metoder.</p>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>Statisk metoder</legend>
+            <button type="button" data-demo="demo0">: now</button>
+            <button type="button" data-demo="demo1">: Konstrutøren som statisk metode</button>
+            <button type="button" data-demo="demo2">: UTC</button>
+        </fieldset>
+        <fieldset>
+            <legend>Forekomst av Date</legend>
+            <button type="button" data-demo="demo3">: Objekt for akkurat nå</button>
+            <button type="button" data-demo="demo4">: Objekt for oppgitt dato</button>
+        </fieldset>
+        <fieldset>
+            <legend>Metoder for returnere dato og sette dato </legend>
+            <button type="button" data-demo="demo5">: getHours</button>
+            <button type="button" data-demo="demo6">: getFullYear</button>
+            <button type="button" data-demo="demo7">: getFullYear og setFullYear</button>
+        </fieldset>
+        <fieldset>
+            <legend>Date og språk-plassering</legend>
+            <button type="button" data-demo="demo8">: Intl objektet og format</button>
+            <button type="button" data-demo="demo9">: toLocaleDateString</button>
+        </fieldset>
+        <pre data-viewelm></pre>
+    </div>
+</body>
+
+</html>

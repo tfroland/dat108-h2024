@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Bjarte Kileng">
+    <link rel="shortcut icon" href="#">
+
+    <script defer src="merarray.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+    <title>Flere nytte Array metoder</title>
+</head>
+
+<body>
+    <h1>Flere nytte Array metoder</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+    <p>Her demonstreres flere av <strong>Array</strong> sine
+        metoder.
+        For alle Aray metoder, sjekk
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">
+            dokumentasjonen hos MDN</a>.</p>
+
+    <div id="demoHandler">
+        <fieldset>
+            <legend>Legge til og fjerne</legend>
+            <button data-demo="demo0">: concat</button>
+            <button data-demo="demo1">: splice for å legge til</button>
+            <button data-demo="demo2">: splice for å slette</button>
+            <button data-demo="demo3">: splice for å erstatte</button>
+        </fieldset>
+        <fieldset>
+            <legend>Legge til og fjerne til kopi av tabell</legend>
+            <button data-demo="demo4">: toSpliced for å legge til</button>
+            <button data-demo="demo5">: toSpliced for å slette</button>
+            <button data-demo="demo6">: toSpliced for å erstatte</button>
+        </fieldset>
+        <fieldset>
+            <legend>Kopiere deler av tabell med slice</legend>
+            <button data-demo="demo7">: Mellom to indekser</button>
+            <button data-demo="demo8">: Fra startposisjon til siste</button>
+            <button data-demo="demo9">: Sluttpossjon angitt fra siste element</button>
+            <button data-demo="demo10">: Posisjoner angitt fra siste element</button>
+        </fieldset>
+        <fieldset>
+            <legend>Sjekk på innhold med every, some, includes</legend>
+            <button data-demo="demo11">: every</button>
+            <button data-demo="demo12">: every</button>
+            <button data-demo="demo13">: some</button>
+            <button data-demo="demo14">: includes</button>
+            <button data-demo="demo15">: includes</button>
+        </fieldset>
+        <fieldset>
+            <legend>Transformere til ny tabell med filter, map, toSorted</legend>
+            <button data-demo="demo16">: filter</button>
+            <button data-demo="demo17">: map</button>
+            <button data-demo="demo18">: map</button>
+            <button data-demo="demo19">: toSorted for å sortere til ny tabell</button>
+        </fieldset>
+        <fieldset>
+            <legend>Sortere tabell med sort</legend>
+            <button data-demo="demo20">: Som toSorted, men endrer kilden, ikke kopi</button>
+        </fieldset>
+        <fieldset>
+            <legend>Konvertere mellom tekst og tabell</legend>
+            <button data-demo="demo21">: Tekst til tabell med split</button>
+            <button data-demo="demo22">: Tabell til tekst med join</button>
+            <button data-demo="demo23">: Tabell til tekst med join</button>
+        </fieldset>
+        <fieldset>
+            <legend>Reduserer tabell til ett enkelt element med reduce</legend>
+            <button data-demo="demo24">: Summere alle tall i tabell</button>
+            <button data-demo="demo25">: Produkt av alle tall i tabell</button>
+            <button data-demo="demo26">: Største element i tabell</button>
+        </fieldset>
+
+
+        <pre data-viewelm></pre>
+    </div>
+
+</body>
+
+</html>
